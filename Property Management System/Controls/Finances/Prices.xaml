@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="Property_Management_System.Prices"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Property_Management_System"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             Background="{DynamicResource MaterialDesignPaper}"
+             TextElement.FontWeight="Medium"
+             TextElement.FontSize="14"
+             FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Stretch" Grid.Column="0" Margin="10 0 0 0">
+            <DataGrid x:Name="PricesList" Margin="0 10 10 20" AutoGenerateColumns="False" IsReadOnly="True" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Start Date" Binding="{Binding DateFromFormat}"/>
+                    <DataGridTextColumn Header="End Date" Binding="{Binding DateToFormat}"/>
+                    <DataGridTextColumn Header="Price per Night" Binding="{Binding PriceNightly, StringFormat='£{0}'}"/>
+                    <DataGridTextColumn Header="Pricer per Week" Binding="{Binding PriceWeekly, StringFormat='£{0}'}"/>
+                </DataGrid.Columns>
+                <DataGrid.ContextMenu>
+                    <ContextMenu >
+                        <MenuItem Header="Delete" Click="Delete_Click"  />
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+            </DataGrid>
+            <Button Name="Delete" Width="100" HorizontalAlignment="Left" Content="Delete" Click="Delete_Click" />
+        </StackPanel>
+        <GroupBox Grid.Column="1" Header="Add New Price" HorizontalAlignment="Center" Margin="10 10 10 10" VerticalAlignment="Top" Style="{DynamicResource MaterialDesignGroupBox}" materialDesign:ColorZoneAssist.Mode="Accent">
+            <StackPanel>
+                <Grid Width="300">
+                    <Grid.Resources>
+                        <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource MaterialDesignTextBox}">
+                            <Setter Property="materialDesign:HintAssist.IsFloating" Value="True"/>
+                            <Setter Property="Margin" Value="8,8,8,8"/>
+                        </Style>
+                        <Style TargetType="{x:Type DatePicker}" BasedOn="{StaticResource MaterialDesignDatePicker}">
+                            <Setter Property="materialDesign:HintAssist.IsFloating" Value="True"/>
+                            <Setter Property="Margin" Value="8,8,8,8"/>
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <DatePicker x:Name="DateFromInput" Grid.Row="0" materialDesign:HintAssist.Hint="Date From" />
+                    <DatePicker x:Name="DateToInput" Grid.Row="1" materialDesign:HintAssist.Hint="Date To" />
+                    <TextBox x:Name="NightPriceField" Grid.Row="2" materialDesign:HintAssist.Hint="Price per Night" PreviewTextInput="Field_PreviewTextInput" />
+                    <TextBox x:Name="WeekPriceField" Grid.Row="3" materialDesign:HintAssist.Hint="Price per Week" PreviewTextInput="Field_PreviewTextInput" />
+                </Grid>
+                <Button x:Name="Add" Width="100" Margin="10 0 0 0" Content="Add" Style="{StaticResource MaterialDesignRaisedDarkButton}" Click="Add_Click"/>
+                </StackPanel>
+        </GroupBox>
+        <GroupBox Grid.Column="2" Header="Set Base Price" HorizontalAlignment="Center" Margin="10 10 10 10" VerticalAlignment="Top" Style="{DynamicResource MaterialDesignGroupBox}" materialDesign:ColorZoneAssist.Mode="Accent">
+            <StackPanel>
+                <Grid Width="300">
+                    <Grid.Resources>
+                        <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource MaterialDesignTextBox}">
+                            <Setter Property="materialDesign:HintAssist.IsFloating" Value="True"/>
+                            <Setter Property="Margin" Value="8,8,8,8"/>
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBox x:Name="BaseNightPriceField" Grid.Row="0" materialDesign:HintAssist.Hint="Price per Night" PreviewTextInput="Field_PreviewTextInput" />
+                    <TextBox x:Name="BaseWeekPriceField" Grid.Row="1" materialDesign:HintAssist.Hint="Price per Week" PreviewTextInput="Field_PreviewTextInput" />
+                </Grid>
+                <Button x:Name="BaseAdd" Width="100" Margin="10 0 0 0" Content="Save" Style="{StaticResource MaterialDesignRaisedDarkButton}" Click="BaseAdd_Click"/>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</UserControl>

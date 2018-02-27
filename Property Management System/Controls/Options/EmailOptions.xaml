@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Property_Management_System.EmailOptions"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Property_Management_System"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             Background="{DynamicResource MaterialDesignPaper}"
+             TextElement.FontWeight="Medium"
+             TextElement.FontSize="14"
+             FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!-- Fields -->
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBox Name="HostField" Margin="10 10 10 0" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Width="200" materialDesign:HintAssist.Hint="POP3/IMAP Host"></TextBox>
+            <TextBox Name="SenderField" Margin="10 10 10 0" Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Width="200" materialDesign:HintAssist.Hint="Default Sender Email"></TextBox>
+            <TextBox Name="SMTPPortField" Margin="10 10 10 0" Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" Width="200" materialDesign:HintAssist.Hint="SMPTP Port"></TextBox>
+            <PasswordBox Name="PasswordField" Margin="10 10 10 0" Grid.Row="1" Grid.Column="1" Width="200" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" materialDesign:HintAssist.Hint="Password" />
+        </Grid>
+        <!-- /Fields -->
+        <StackPanel Grid.Row="1" Margin="0 20 0 0" HorizontalAlignment="Left">
+            <TextBox Name="TestRecipientField" Margin="10 10 10 0" TextWrapping="Wrap" Width="200" materialDesign:HintAssist.Hint="Test Recipient"></TextBox>
+        </StackPanel>
+        <!-- Buttons -->
+        <StackPanel Grid.Row="2" Margin="0 20 0 0" Orientation="Horizontal">
+            <Button Name="Save" Margin="10 0 10 0" Content="Save" Style="{StaticResource MaterialDesignRaisedAccentButton}" Width="100" Click="Save_Click"/>
+            <Button Name="Test" Margin="10 0 0 0" Content="Test" Style="{StaticResource MaterialDesignRaisedAccentButton}" Width="100" Click="Test_Click"/>
+        </StackPanel>
+        <!-- /Buttons -->
+    </Grid>
+</UserControl>

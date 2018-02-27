@@ -1,0 +1,33 @@
+<Window x:Class="Property_Management_System.Options"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Property_Management_System"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+        Title="Options">
+    <Grid>
+        <!-- Column Definitions -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <!-- Side Menu -->
+        <TreeView Grid.Column="0" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Margin="0,10,10,0" >
+            <TreeViewItem Header="Settings" IsExpanded="False">
+                <TreeViewItem Header="General" MouseLeftButtonUp="General_Click"/>
+                <TreeViewItem Header="Database" MouseLeftButtonUp="Database_Click"/>
+                <TreeViewItem Header="Email" MouseLeftButtonUp="Email_Click"/>
+            </TreeViewItem>
+            <TreeViewItem Header="General Options" MouseLeftButtonUp="General_Click"/>
+        </TreeView>
+        <!-- Changeable Content -->
+        <ContentControl Name="OptionsContent" Grid.Column="1" Margin="10" />
+    </Grid>
+</Window>

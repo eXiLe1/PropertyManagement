@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{227A2BA8-A581-417D-AE44-55A09EB28F26}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Property_Management_System</RootNamespace>
+    <AssemblyName>Property Management System</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.3.1.953, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.3.1.953\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\..\Downloads\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Classes\Logic\Analysis.cs" />
+    <Compile Include="Classes\Logic\Database.cs" />
+    <Compile Include="Classes\Logic\Email.cs" />
+    <Compile Include="Controls\Bookings\BookingsList.xaml.cs">
+      <DependentUpon>BookingsList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Bookings\BookingsSingle.xaml.cs">
+      <DependentUpon>BookingsSingle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Finances\AnalysisControl.xaml.cs">
+      <DependentUpon>AnalysisControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Finances\CostReport.xaml.cs">
+      <DependentUpon>CostReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Finances\Prices.xaml.cs">
+      <DependentUpon>Prices.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HostControls\BookingsHost.xaml.cs">
+      <DependentUpon>BookingsHost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HostControls\CustomersHost.xaml.cs">
+      <DependentUpon>CustomersHost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HostControls\FinancesHost.xaml.cs">
+      <DependentUpon>FinancesHost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HostControls\TasksHost.xaml.cs">
+      <DependentUpon>TasksHost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Options\EmailOptions.xaml.cs">
+      <DependentUpon>EmailOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Options\DatabaseOptions.xaml.cs">
+      <DependentUpon>DatabaseOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Options\GeneralOptions.xaml.cs">
+      <DependentUpon>GeneralOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Customers\ViewCustomers.xaml.cs">
+      <DependentUpon>ViewCustomers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Tasks\TasksControl.xaml.cs">
+      <DependentUpon>TasksControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Tasks\TaskSingle.xaml.cs">
+      <DependentUpon>TaskSingle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Website\ReviewList.xaml.cs">
+      <DependentUpon>ReviewList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Website\ReviewSingle.xaml.cs">
+      <DependentUpon>ReviewSingle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Toolbars\TasksToolbar.xaml.cs">
+      <DependentUpon>TasksToolbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Toolbars\BookingsToolbar.xaml.cs">
+      <DependentUpon>BookingsToolbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Toolbars\CustomersToolbar.xaml.cs">
+      <DependentUpon>CustomersToolbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Toolbars\FinancesToolbar.xaml.cs">
+      <DependentUpon>FinancesToolbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Toolbars\WebsiteToolbar.xaml.cs">
+      <DependentUpon>WebsiteToolbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Viewmodels\BaseViewModel.cs" />
+    <Compile Include="Viewmodels\BookingSingleViewmodel.cs" />
+    <Compile Include="Viewmodels\CostSingleViewmodel.cs" />
+    <Compile Include="Viewmodels\CustomerViewmodel.cs" />
+    <Compile Include="Viewmodels\PaymentViewmodel.cs" />
+    <Compile Include="Viewmodels\PriceViewmodel.cs" />
+    <Compile Include="Viewmodels\ReviewSingleViewmodel.cs" />
+    <Compile Include="Viewmodels\TaskViewmodel.cs" />
+    <Compile Include="Windows\EmailWindow.xaml.cs">
+      <DependentUpon>EmailWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Options.xaml.cs">
+      <DependentUpon>Options.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Controls\Bookings\BookingsList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Bookings\BookingsSingle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Finances\AnalysisControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Finances\CostReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Finances\Prices.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\HostControls\BookingsHost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\HostControls\CustomersHost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\HostControls\FinancesHost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\HostControls\TasksHost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\HostControls\WebsiteHost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\HostControls\WelcomeHost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Options\EmailOptions.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Options\DatabaseOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Options\GeneralOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Customers\ViewCustomers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Tasks\TasksControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Tasks\TaskSingle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Website\ReviewList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Website\ReviewSingle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Logic\Log.cs" />
+    <Compile Include="Controls\HostControls\WebsiteHost.xaml.cs">
+      <DependentUpon>WebsiteHost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HostControls\WelcomeHost.xaml.cs">
+      <DependentUpon>WelcomeHost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Toolbars\TasksToolbar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Toolbars\BookingsToolbar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Toolbars\CustomersToolbar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Toolbars\FinancesToolbar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Toolbars\WebsiteToolbar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EmailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Options.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

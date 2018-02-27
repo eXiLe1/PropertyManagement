@@ -1,0 +1,101 @@
+﻿<Window x:Class="Property_Management_System.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Property_Management_System"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+        Title="MainWindow" WindowState="Maximized">
+    <Grid>
+        <!-- Top Menu -->
+        <DockPanel>
+            <Menu IsMainMenu="True" DockPanel.Dock="Top">
+                <MenuItem Header="File">
+                    <MenuItem Header="Exit" InputGestureText="Ctrl+W" Click="ExitMenuItem_Click">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="ExitToApp" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Tools">
+                    <MenuItem Header="Connect to Database" Click="DatabaseMenuItem_Click">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="Database" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Setup Emailing" Click="EmailingItem_Click">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="Email" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Options" Click="OptionsMenuItem_Click">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="Settings" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Help">
+                    <MenuItem Header="Help" Click="HelpMenuItem_Click">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="Help"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <!-- /Top Menu -->
+
+        <!-- Side Menu -->
+        <materialDesign:DrawerHost HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="1" BorderBrush="{DynamicResource MaterialDesignDivider}" Margin="0,50,0,28" Panel.ZIndex="10">
+            <materialDesign:DrawerHost.RightDrawerContent>
+                <StackPanel Margin="50">
+                    <TextBlock Margin="0, 0, 0, 20" HorizontalAlignment="Center">MENU</TextBlock>
+                    <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" Content="Home" Margin="0, 0, 0, 30" Click="Home_Click" Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}" />
+                    <Button Style="{StaticResource MaterialDesignRaisedLightButton}" Content="Website" Margin="0, 0, 0, 10" Click="Website_Click" Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}" />
+                    <Button Style="{StaticResource MaterialDesignRaisedLightButton}" Content="Bookings" Margin="0, 0, 0, 10" Click="Bookings_Click" Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}" />
+                    <Button Style="{StaticResource MaterialDesignRaisedLightButton}" Content="Finances" Margin="0, 0, 0, 10" Click="Finances_Click" Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}" />
+                    <Button Style="{StaticResource MaterialDesignRaisedLightButton}" Content="Customers" Margin="0, 0, 0, 10" Click="Customers_Click" Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}" />
+                    <Button Style="{StaticResource MaterialDesignRaisedLightButton}" Content="Tasks" Margin="0, 0, 0, 10" Click="Tasks_Click" Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}" />
+                    <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}">
+                        CLOSE MENU
+                    </Button>
+                </StackPanel>
+            </materialDesign:DrawerHost.RightDrawerContent>
+            <Grid>
+                <materialDesign:ColorZone Mode="PrimaryMid" Padding="0 5 0 5" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5, 0, 0, 0">
+                            <ContentControl Name="ToolbarContent" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0, 0, 5, 0">
+                            <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" Content="{materialDesign:PackIcon Menu}" Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}" CommandParameter="{x:Static Dock.Right}"/>
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:ColorZone>
+            </Grid>
+        </materialDesign:DrawerHost>
+        <!-- /Side Menu -->
+
+        <!-- Main Content -->
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0 100 0 30" PanningDeceleration="0.1">
+            <ContentControl x:Name="MainContent" />
+        </ScrollViewer>
+        <!-- /Main Content -->
+
+        <!-- Bottom Status Bar -->
+        <materialDesign:ColorZone Mode="PrimaryDark" Padding="2"  VerticalAlignment="Bottom">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="RefreshDatabaseStatus" Content="Refresh" Click="RefreshDatabaseStatus_Click" FontSize="12" Style="{StaticResource MaterialDesignRaisedAccentButton}" Height="25" />
+                <Label x:Name="DatabaseStatus" Content="Database Status: " FontSize="12"/>
+            </StackPanel>
+        </materialDesign:ColorZone>
+        <!-- /Bottom Status Bar -->
+    </Grid>
+</Window>

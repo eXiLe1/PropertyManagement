@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Property_Management_System.GeneralOptions"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Property_Management_System"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             Background="{DynamicResource MaterialDesignPaper}"
+             TextElement.FontWeight="Medium"
+             TextElement.FontSize="14"
+             FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <StackPanel VerticalAlignment="Top" Margin="10">
+        <TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}" Margin="0 10" >General</TextBlock>
+        <CheckBox x:Name="AdvancedLogging" Checked="AdvancedLogging_Checked" Unchecked="AdvancedLogging_Unchecked">Enable Advanced Logging</CheckBox>
+        <Separator Style="{StaticResource MaterialDesignLightSeparator}"/>
+        <TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}" Margin="0 10" >Pricing</TextBlock>
+        <CheckBox x:Name="ShowPastPrices" Checked="ShowPastPrices_Checked" Unchecked="ShowPastPrices_Unchecked">Show Past Prices</CheckBox>
+        <Separator Style="{StaticResource MaterialDesignLightSeparator}"/>
+        <TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}" Margin="0 10">Tasks</TextBlock>
+        <CheckBox x:Name="ShowPastTasks" Checked="ShowPastTasks_Checked" Unchecked="ShowPastTasks_Unchecked">Show Past Tasks</CheckBox>
+    </StackPanel>
+</UserControl>
