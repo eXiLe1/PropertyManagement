@@ -127,6 +127,9 @@
     <Compile Include="Controls\Website\ReviewSingle.xaml.cs">
       <DependentUpon>ReviewSingle.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Toolbars\CloudToolbar.xaml.cs">
+      <DependentUpon>CloudToolbar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Toolbars\TasksToolbar.xaml.cs">
       <DependentUpon>TasksToolbar.xaml</DependentUpon>
     </Compile>
@@ -146,6 +149,7 @@
     <Compile Include="Viewmodels\BookingSingleViewmodel.cs" />
     <Compile Include="Viewmodels\CostSingleViewmodel.cs" />
     <Compile Include="Viewmodels\CustomerViewmodel.cs" />
+    <Compile Include="Viewmodels\DirectoryListViewmodel.cs" />
     <Compile Include="Viewmodels\PaymentViewmodel.cs" />
     <Compile Include="Viewmodels\PriceViewmodel.cs" />
     <Compile Include="Viewmodels\ReviewSingleViewmodel.cs" />
@@ -263,6 +267,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Toolbars\CloudToolbar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Toolbars\TasksToolbar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -154,5 +154,17 @@ namespace Property_Management_System.Properties {
                 this["FTP_Password"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FTP_LocalLoc {
+            get {
+                return ((string)(this["FTP_LocalLoc"]));
+            }
+            set {
+                this["FTP_LocalLoc"] = value;
+            }
+        }
     }
 }

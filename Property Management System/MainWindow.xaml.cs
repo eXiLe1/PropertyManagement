@@ -225,7 +225,8 @@ namespace Property_Management_System
 
         private void Cloud_Click(object sender, RoutedEventArgs e)
         {
-
+            MainContent.Content = new CloudHost();
+            ToolbarContent.Content = new CloudToolbar();
         }
     }
 }

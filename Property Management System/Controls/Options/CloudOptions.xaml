@@ -35,7 +35,6 @@
         <!-- /Fields -->
         <StackPanel Grid.Row="1" Margin="0 20 0 0" HorizontalAlignment="Left" Orientation="Horizontal">
             <TextBox Name="LocalLocField" Margin="10 10 10 0" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Width="200" materialDesign:HintAssist.Hint="Default Save Location"></TextBox>
-            <Button Name="Browse" Margin="10 0 10 0" Content="Browse" Style="{StaticResource MaterialDesignRaisedDarkButton}" Width="100" Click="Browse_Click"/>
         </StackPanel>
         <!-- Buttons -->
         <StackPanel Grid.Row="2" Margin="0 20 0 0" Orientation="Horizontal">

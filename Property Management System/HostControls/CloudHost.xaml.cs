@@ -36,8 +36,8 @@ namespace Property_Management_System
         {
             switch (Content)
             {
-                case "ViewCustomers":
-                    Window.MainContent.Content = new ViewCustomers();
+                case "AccessCloud":
+                    Window.MainContent.Content = new AccessCloud();
                     break;
                 case "Analysis":
                     break;

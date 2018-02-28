@@ -35,7 +35,8 @@ namespace Property_Management_System
         {
             if (string.IsNullOrWhiteSpace(AddressField.Text) ||
                 string.IsNullOrWhiteSpace(UserField.Text) ||
-                string.IsNullOrWhiteSpace(PasswordField.Password))
+                string.IsNullOrWhiteSpace(PasswordField.Password) || 
+                string.IsNullOrWhiteSpace(LocalLocField.Text))
             {
                 MessageBox.Show("Please enter required information.", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
             }
@@ -44,6 +45,7 @@ namespace Property_Management_System
                 Properties.Settings.Default.FTP_Address = AddressField.Text;
                 Properties.Settings.Default.FTP_User = UserField.Text;
                 Properties.Settings.Default.FTP_Password = PasswordField.Password;
+                Properties.Settings.Default.FTP_LocalLoc = LocalLocField.Text;
                 Properties.Settings.Default.Save();
                 if (Properties.Settings.Default.User_AdvancedLogging)
                 {
@@ -57,15 +59,5 @@ namespace Property_Management_System
             }
         }
         #endregion
-
-        private void Browse_Click(object sender, RoutedEventArgs e)
-        {
-            Folder
-            Nullable<bool> result = dlg.ShowDialog();
-            if (result == true)
-            {
-                string name = dlg.
-            }
-        }
     }
 }
