@@ -63,6 +63,7 @@
                     <Button Style="{StaticResource MaterialDesignRaisedLightButton}" Content="Finances" Margin="0, 0, 0, 10" Click="Finances_Click" Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}" />
                     <Button Style="{StaticResource MaterialDesignRaisedLightButton}" Content="Customers" Margin="0, 0, 0, 10" Click="Customers_Click" Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}" />
                     <Button Style="{StaticResource MaterialDesignRaisedLightButton}" Content="Tasks" Margin="0, 0, 0, 10" Click="Tasks_Click" Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}" />
+                    <Button Style="{StaticResource MaterialDesignRaisedLightButton}" Content="Cloud" Margin="0, 0, 0, 10" Click="Cloud_Click" Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}" />
                     <Button Style="{StaticResource MaterialDesignRaisedAccentButton}" Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}">
                         CLOSE MENU
                     </Button>
@@ -94,6 +95,8 @@
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="RefreshDatabaseStatus" Content="Refresh" Click="RefreshDatabaseStatus_Click" FontSize="12" Style="{StaticResource MaterialDesignRaisedAccentButton}" Height="25" />
                 <Label x:Name="DatabaseStatus" Content="Database Status: " FontSize="12"/>
+                <Label> • </Label>
+                <Label x:Name="FTPStatus" Content="FTP Status: " FontSize="12"/>
             </StackPanel>
         </materialDesign:ColorZone>
         <!-- /Bottom Status Bar -->

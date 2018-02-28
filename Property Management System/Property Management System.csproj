@@ -41,7 +41,7 @@
       <HintPath>..\packages\MaterialDesignThemes.2.3.1.953\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data">
-      <HintPath>..\..\..\..\..\Downloads\MySql.Data.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\dll-20180227T171416Z-001\dll\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -72,6 +72,9 @@
     <Compile Include="Controls\Bookings\BookingsSingle.xaml.cs">
       <DependentUpon>BookingsSingle.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Cloud\AccessCloud.xaml.cs">
+      <DependentUpon>AccessCloud.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Finances\AnalysisControl.xaml.cs">
       <DependentUpon>AnalysisControl.xaml</DependentUpon>
     </Compile>
@@ -81,16 +84,19 @@
     <Compile Include="Controls\Finances\Prices.xaml.cs">
       <DependentUpon>Prices.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\HostControls\BookingsHost.xaml.cs">
+    <Compile Include="HostControls\BookingsHost.xaml.cs">
       <DependentUpon>BookingsHost.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\HostControls\CustomersHost.xaml.cs">
+    <Compile Include="HostControls\CloudHost.xaml.cs">
+      <DependentUpon>CloudHost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HostControls\CustomersHost.xaml.cs">
       <DependentUpon>CustomersHost.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\HostControls\FinancesHost.xaml.cs">
+    <Compile Include="HostControls\FinancesHost.xaml.cs">
       <DependentUpon>FinancesHost.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\HostControls\TasksHost.xaml.cs">
+    <Compile Include="HostControls\TasksHost.xaml.cs">
       <DependentUpon>TasksHost.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Options\EmailOptions.xaml.cs">
@@ -154,6 +160,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\Cloud\AccessCloud.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\Finances\AnalysisControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -166,27 +176,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\HostControls\BookingsHost.xaml">
+    <Page Include="HostControls\BookingsHost.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\HostControls\CustomersHost.xaml">
+    <Page Include="HostControls\CloudHost.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="HostControls\CustomersHost.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\HostControls\FinancesHost.xaml">
+    <Page Include="HostControls\FinancesHost.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\HostControls\TasksHost.xaml">
+    <Page Include="HostControls\TasksHost.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\HostControls\WebsiteHost.xaml">
+    <Page Include="HostControls\WebsiteHost.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\HostControls\WelcomeHost.xaml">
+    <Page Include="HostControls\WelcomeHost.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -231,10 +245,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Classes\Logic\Log.cs" />
-    <Compile Include="Controls\HostControls\WebsiteHost.xaml.cs">
+    <Compile Include="HostControls\WebsiteHost.xaml.cs">
       <DependentUpon>WebsiteHost.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\HostControls\WelcomeHost.xaml.cs">
+    <Compile Include="HostControls\WelcomeHost.xaml.cs">
       <DependentUpon>WelcomeHost.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">

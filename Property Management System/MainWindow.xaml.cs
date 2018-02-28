@@ -32,6 +32,8 @@ namespace Property_Management_System
             Log.NewLog();
             //Set label to false
             SetDatabaseStatus(false);
+            //Set label to false
+            SetFTPStatus(false);
             //Open the database connection
             Database.InitialOpen();
             if (Properties.Settings.Default.User_AdvancedLogging)
@@ -59,6 +61,21 @@ namespace Property_Management_System
             {
                 Window.DatabaseStatus.Content = "Database Status: Offline";
                 Window.DatabaseStatus.Foreground = Brushes.Red;
+            }
+        }
+
+        public static void SetFTPStatus(bool Status)
+        {
+            if (Status)
+            {
+                //As this method is static we can't access the xaml. So we access it throught the instance of the window created above.
+                Window.FTPStatus.Content = "FTP Status: Online";
+                Window.FTPStatus.Foreground = Brushes.LimeGreen;
+            }
+            else
+            {
+                Window.FTPStatus.Content = "FTP Status: Offline";
+                Window.FTPStatus.Foreground = Brushes.Red;
             }
         }
 
@@ -204,6 +221,11 @@ namespace Property_Management_System
         {
             MainContent.Content = new TasksHost();
             ToolbarContent.Content = new TasksToolbar();
+        }
+
+        private void Cloud_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
