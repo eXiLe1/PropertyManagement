@@ -24,6 +24,7 @@
                 <TreeViewItem Header="General" MouseLeftButtonUp="General_Click"/>
                 <TreeViewItem Header="Database" MouseLeftButtonUp="Database_Click"/>
                 <TreeViewItem Header="Email" MouseLeftButtonUp="Email_Click"/>
+                <TreeViewItem Header="Cloud" MouseLeftButtonUp="Cloud_Click"/>
             </TreeViewItem>
             <TreeViewItem Header="General Options" MouseLeftButtonUp="General_Click"/>
         </TreeView>

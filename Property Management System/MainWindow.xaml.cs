@@ -130,7 +130,7 @@ namespace Property_Management_System
         /// <param name="e">The data being sent.</param>
         private void ExitMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         /// <summary>

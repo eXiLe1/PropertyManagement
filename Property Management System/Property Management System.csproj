@@ -66,6 +66,7 @@
     <Compile Include="Classes\Logic\Analysis.cs" />
     <Compile Include="Classes\Logic\Database.cs" />
     <Compile Include="Classes\Logic\Email.cs" />
+    <Compile Include="Classes\Logic\Ftp.cs" />
     <Compile Include="Controls\Bookings\BookingsList.xaml.cs">
       <DependentUpon>BookingsList.xaml</DependentUpon>
     </Compile>
@@ -83,6 +84,9 @@
     </Compile>
     <Compile Include="Controls\Finances\Prices.xaml.cs">
       <DependentUpon>Prices.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Options\CloudOptions.xaml.cs">
+      <DependentUpon>CloudOptions.xaml</DependentUpon>
     </Compile>
     <Compile Include="HostControls\BookingsHost.xaml.cs">
       <DependentUpon>BookingsHost.xaml</DependentUpon>
@@ -175,6 +179,10 @@
     <Page Include="Controls\Finances\Prices.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Options\CloudOptions.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="HostControls\BookingsHost.xaml">
       <SubType>Designer</SubType>

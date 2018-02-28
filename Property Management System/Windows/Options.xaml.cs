@@ -60,5 +60,10 @@ namespace Property_Management_System
         {
             OptionsContent.Content = new EmailOptions();
         }
+
+        private void Cloud_Click(object sender, MouseButtonEventArgs e)
+        {
+            OptionsContent.Content = new CloudOptions();
+        }
     }
 }

@@ -118,5 +118,41 @@ namespace Property_Management_System.Properties {
                 this["User_ShowPastTasks"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FTP_Address {
+            get {
+                return ((string)(this["FTP_Address"]));
+            }
+            set {
+                this["FTP_Address"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FTP_User {
+            get {
+                return ((string)(this["FTP_User"]));
+            }
+            set {
+                this["FTP_User"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FTP_Password {
+            get {
+                return ((string)(this["FTP_Password"]));
+            }
+            set {
+                this["FTP_Password"] = value;
+            }
+        }
     }
 }

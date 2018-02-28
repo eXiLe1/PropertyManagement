@@ -50,6 +50,11 @@ namespace Property_Management_System
                 {
                     Log.Commit("[EmailOptions] Email Details Saved: " + Properties.Settings.Default.Email_Host);
                 }
+                if (MessageBox.Show("Email information saved!", "Saved", MessageBoxButton.OK, MessageBoxImage.Information) == MessageBoxResult.OK)
+                {
+                    var ThisWindow = Window.GetWindow(this);
+                    ThisWindow.Close();
+                }
             }
         }
 

@@ -48,6 +48,11 @@ namespace Property_Management_System
                     Log.Commit("[DatabaseOptions] Connection string saved: "+ Properties.Settings.Default.Database_ConnectionString);
                 }
                 Database.Refresh();
+                if (MessageBox.Show("Database connection information saved!", "Saved", MessageBoxButton.OK, MessageBoxImage.Information) == MessageBoxResult.OK)
+                {
+                    var ThisWindow = Window.GetWindow(this);
+                    ThisWindow.Close();
+                }
             }
         }
 
